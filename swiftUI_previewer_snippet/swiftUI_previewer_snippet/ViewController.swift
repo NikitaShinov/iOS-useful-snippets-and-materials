@@ -7,13 +7,27 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CustomViewControllerPreview: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        view.backgroundColor = .systemGreen
+        
     }
-
 
 }
 
+#if DEBUG
+import SwiftUI
+
+
+
+struct UpgradeViewController_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        ViewControllerPreviewer<CustomViewControllerPreview>()
+    }
+    
+}
+#endif
